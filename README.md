@@ -1,5 +1,211 @@
 # FP-TKA-Kelompok-2
 ## Langkah Implementasi
+### Setup database
+Pertama, kita perlu membuat bash file berisikan script berikut pada server database untuk menginstall mongodb
+
+```bash
+#!/bin/bash
+
+# Install required packages
+sudo apt-get install -y gnupg curl
+
+# Download and save MongoDB GPG key
+curl -fsSL https://pgp.mongodb.com/server-7.0.asc | \
+   sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg \
+   --dearmor
+
+# Add MongoDB repository to sources list
+echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
+
+# Update package list
+sudo apt-get update
+
+# Install MongoDB
+sudo apt-get install -y mongodb-org
+
+# Start MongoDB service
+sudo systemctl start mongod
+
+# Enable MongoDB service to start on boot
+sudo systemctl enable mongod
+
+# Display MongoDB service status
+sudo systemctl status mongod
+```
+
+buat scriptnya executable:
+
+```bash
+chmod +x install_mongodb.sh
+```
+
+lalu jalankan scriptnya:
+
+```bash
+./install_mongodb.sh
+```
+
+lalu kita membuat `update_nftables.sh` untuk memperbolehkan akses ssh dari port 22, serta membuka akses untuk worker yang akan mengakses database
+
+```bash
+#!/bin/bash
+
+# Define the path to the nftables configuration file
+NFTABLES_CONF="/etc/nftables.conf"
+
+# Backup the current nftables configuration file
+cp "$NFTABLES_CONF" "$NFTABLES_CONF.bak"
+
+# Create a new nftables configuration
+cat <<EOF > "$NFTABLES_CONF"
+#!/usr/sbin/nft -f
+
+flush ruleset
+
+table inet filter {
+        chain input {
+                type filter hook input priority 0; policy drop;
+
+                # Allow loopback traffic
+                iif "lo" accept
+
+                # Allow incoming traffic on MongoDB port from specific IP addresses
+                tcp dport 27017 ip saddr { 178.128.22.10, 165.232.171.179, 68.183.237.141 } accept
+                tcp dport 22 accept
+        }
+        chain forward {
+                type filter hook forward priority 0;
+        }
+        chain output {
+                type filter hook output priority 0;
+        }
+}
+EOF
+
+echo "Updated $NFTABLES_CONF with new rules."
+
+# Reload nftables to apply the changes
+sudo nft -f "$NFTABLES_CONF"
+
+echo "nftables reloaded successfully."
+```
+
+buat jadi executable:
+
+```bash
+chmod +x update_nftables.sh
+```
+
+lalu jalankan scriptnya:
+
+```bash
+sudo ./update_nftables.sh
+```
+
+lalu kita akan membuat `update_mongod_conf.sh` untuk membuka akses db dan memasang otorisasi seperti dibawah ini:
+
+```bash
+#!/bin/bash
+
+# Define the path to the mongod configuration file
+MONGOD_CONF="/etc/mongod.conf"
+
+# Backup the current mongod configuration file
+cp "$MONGOD_CONF" "$MONGOD_CONF.bak"
+
+# Create a new mongod configuration
+cat <<EOF > "$MONGOD_CONF"
+# mongod.conf
+
+# for documentation of all options, see:
+#   http://docs.mongodb.org/manual/reference/configuration-options/
+
+# Where and how to store data.
+storage:
+  dbPath: /var/lib/mongodb
+#  engine:
+#  wiredTiger:
+
+# where to write logging data.
+systemLog:
+  destination: file
+  logAppend: true
+  path: /var/log/mongodb/mongod.log
+
+# network interfaces
+net:
+  port: 27017
+  bindIp: 0.0.0.0
+
+# how the process runs
+processManagement:
+  timeZoneInfo: /usr/share/zoneinfo
+
+#security:
+security:
+  authorization: enabled
+
+#operationProfiling:
+
+#replication:
+
+#sharding:
+
+## Enterprise-Only Options:
+
+#auditLog:
+EOF
+
+echo "Updated $MONGOD_CONF with new configuration."
+
+# Restart the mongod service to apply the changes
+sudo systemctl restart mongod
+
+echo "mongod service restarted successfully."
+```
+
+buat scriptnya menjadi executable:
+
+```bash
+chmod +x update_mongod_conf.sh
+```
+
+lalu jalankan scriptnya:
+
+```bash
+sudo ./update_mongod_conf.sh
+```
+
+lalu kita buat juga `create_mongo_user.sh` untuk membuat akun dimana worker dapat memodifikasi database:
+
+```bash
+#!/bin/bash
+
+# Connect to MongoDB using mongosh
+mongosh <<EOF
+use admin
+db.createUser({
+  user: "worker",
+  pwd: "Kelompok2TKA",
+  roles: [
+    { role: "readWrite", db: "orders_db" },
+  ]
+})
+EOF
+```
+
+buat scriptnya menjadi executable:
+
+```bash
+chmod +x create_mongo_user.sh
+```
+
+lalu jalankan scriptnya:
+
+```bash
+./create_mongo_user.sh
+```
+
 ### Load Balancing
 jalankan script berikut pada load balancer
 ```
