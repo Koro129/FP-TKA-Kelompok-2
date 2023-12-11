@@ -73,3 +73,17 @@ fi
 nohup python3 app.py > app.log 2>&1 &
 echo "Aplikasi dijalankan ulang."
 ```
+## Hasil Pengujian Endpoint
+### Get /orders
+![image](https://github.com/Koro129/FP-TKA-Kelompok-2/assets/113784446/1f04dc46-0047-474b-b6a3-a4af0a765855)
+### GET /orders/<order_id>
+![image](https://github.com/Koro129/FP-TKA-Kelompok-2/assets/113784446/0a64ca28-f5eb-4358-99b6-d2cf6bd2c006)
+### POST /orders
+![image](https://github.com/Koro129/FP-TKA-Kelompok-2/assets/113784446/d33f444e-1a72-4b7c-9a76-56c0925dd141)
+### PUT /orders/<order_id>
+![image](https://github.com/Koro129/FP-TKA-Kelompok-2/assets/113784446/1896ae22-fd4c-4844-87a6-28d317309b85)
+### DELETE /orders/<order_id>
+![image](https://github.com/Koro129/FP-TKA-Kelompok-2/assets/113784446/847616ce-96e9-4259-a700-586378b55020)
+
+
+
