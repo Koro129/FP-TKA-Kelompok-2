@@ -19,7 +19,7 @@
     - [Instalasi app.py](#instalasi-apppy)
   - [Hasil Pengujian Endpoint](#hasil-pengujian-endpoint)
     - [Get /orders](#get-orders)
-    - [GET /orders/<order_id>](#GET-orders-orderid)
+    - [GET /orders/<order_id>](#GET-orders-order_id)
     - [POST /orders](#POST-orders)
     - [PUT /orders/<order_id>](#PUT-orders-orderid)
     - [DELETE /orders/<order_id>](#DELETE-orders-orderid)
