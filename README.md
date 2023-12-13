@@ -7,22 +7,25 @@
 - Muh. Ilham Yumna (5027211024)
 - Arkan Hendri (5027211026)
 
-# Laporan Final
 ## Daftar Isi
-- [Laporan Final](#laporan-final)
-  - [Daftar Isi](#daftar-isi)
-  - [Introduction](#introduction)
-  - [Rancangan Arsitektur](#rancangan-arsitektur)
-  - [Tabel Spesifikasi](#tabel-spesifikasi)
-  - [Langkah Implementasi](#langkah-implementasi)
-    - [Load Balancing](#load-balancing)
-    - [Instalasi app.py](#instalasi-apppy)
-  - [Hasil Pengujian Endpoint](#hasil-pengujian-endpoint)
-    - [Get /orders](#get-orders)
-    - [GET /orders/<order_id>](#GET-ordersorder_id)
-    - [POST /orders](#POST-orders)
-    - [PUT /orders/<order_id>](#PUT-ordersorder_id)
-    - [DELETE /orders/<order_id>](#DELETE-ordersorder_id)
+- [Daftar Isi](#daftar-isi)
+- [Introduction](#introduction)
+- [Rancangan Arsitektur](#rancangan-arsitektur)
+- [Tabel Spesifikasi](#tabel-spesifikasi)
+- [Langkah Implementasi](#langkah-implementasi)
+  - [Load Balancing](#load-balancing)
+  - [Instalasi app.py](#instalasi-apppy)
+- [Hasil Pengujian Endpoint](#hasil-pengujian-endpoint)
+  - [Get /orders](#get-orders)
+  - [GET /orders/<order_id>](#GET-ordersorder_id)
+  - [POST /orders](#POST-orders)
+  - [PUT /orders/<order_id>](#PUT-ordersorder_id)
+  - [DELETE /orders/<order_id>](#DELETE-ordersorder_id)
+- [Hasil Analisis Loadtesting](#hasil-analisis-loadtesting)
+- [Kesimpulan](#kesimpulan)
+
+## Introduction
+Anda adalah seorang lulusan Teknologi Informasi, sebagai ahli IT, salah satu kemampuan yang harus dimiliki adalah Keampuan merancang, membangun, mengelola aplikasi berbasis komputer menggunakan layanan awan untuk memenuhi kebutuhan organisasi. Berikut untuk ketentuannya : [Final Project](https://github.com/fuaddary/fp-tka/blob/main/README.md)
 
 ## Rancangan Arsitektur
 ![Final Project Cloud-Page-2 drawio](https://github.com/Koro129/FP-TKA-Kelompok-2/assets/88912492/c96461ad-c7d5-41f2-9d4b-1da67882c210)
