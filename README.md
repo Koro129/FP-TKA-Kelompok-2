@@ -22,7 +22,7 @@
     - [GET /orders/<order_id>](#GET-orders-order_id)
     - [POST /orders](#POST-orders)
     - [PUT /orders/<order_id>](#PUT-orders-orderid)
-    - [DELETE /orders/<order_id>](#DELETE-orders-orderid)
+    - [DELETE /orders/<order_id>](#DELETE-ordersorder_id)
 
 ## Rancangan Arsitektur
 ![Final Project Cloud-Page-2 drawio](https://github.com/Koro129/FP-TKA-Kelompok-2/assets/88912492/c96461ad-c7d5-41f2-9d4b-1da67882c210)
