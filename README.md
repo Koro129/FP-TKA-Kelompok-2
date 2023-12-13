@@ -1,4 +1,42 @@
-# FP-TKA-Kelompok-2
+# Final Project TKA - Kelompok 2 #
+
+## Anggota : ##
+- Fathika Afrine A. (5027211016)
+- Andreas Timotius P. S. (5027211019)
+- Fransiskus Benyamin S. (5027211021)
+- Muh. Ilham Yumna (5027211024)
+- Arkan Hendri (5027211026)
+
+# Laporan Final
+## Daftar Isi
+- [Laporan Final](#laporan-final)
+  - [Daftar Isi](#daftar-isi)
+  - [Introduction](#introduction)
+  - [Rancangan Arsitektur](#rancangan-arsitektur)
+  - [Tabel Spesifikasi](#tabel-spesifikasi)
+  - [Langkah Implementasi](#langkah-implementasi)
+    - [Load Balancing](#load-balancing)
+    - [Instalasi app.py](#instalasi-app.py)
+  - [Hasil Pengujian Endpoint](#hasil-pengujian-endpoint)
+    - [Get /orders](#get/orders)
+    - [GET /orders/<order_id>](#GET/orders/<order_id>)
+    - [POST /orders](#POST/orders)
+    - [PUT /orders/<order_id>](#PUT/orders/<order_id>)
+    - [DELETE /orders/<order_id>](#DELETE/orders/<order_id>)
+
+## Rancangan Arsitektur
+![Final Project Cloud-Page-2 drawio](https://github.com/Koro129/FP-TKA-Kelompok-2/assets/88912492/c96461ad-c7d5-41f2-9d4b-1da67882c210)
+
+## Tabel Spesifikasi
+| No | Nama | Spesifikasi | Fungsi | Harga/bulan |
+|----|-------|--------------------------------|-------------------|-----|
+| 1 | Aura | Regular 1vCPU, 2gb Memory | Load Balancer | 12$ |
+| 2 | Dynasty |	Premium AMD 1vCPU, 2gb Memory | App Worker 1 | 14$ |
+| 3 | Trove | Premium AMD 1vCPU, 2gb Memory | App Worker 2 | 14$ |
+| 4 | Legion | Premium AMD 1vCPU, 2gb Memory | App Worker 3 | 14$ |
+| 5 | Himmel | Regular 1vCPU, 2gb Memory | Database Server | 12$ |
+|||| Total | 66$ |
+
 ## Langkah Implementasi
 ### Setup database
 Pertama, kita perlu membuat bash file berisikan script berikut pada server database untuk menginstall mongodb
