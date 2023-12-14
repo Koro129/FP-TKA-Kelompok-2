@@ -402,3 +402,6 @@ Locust should be run on a different computer/host from the application.
 ![Screenshot (234)](https://github.com/Koro129/FP-TKA-Kelompok-2/assets/56831859/61dc43d7-dade-4430-847d-77784ce402a0)
 
 
+# Kesimpulan
+
+Dengan hasil-hasil ini, dapat disimpulkan bahwa dengan  1 juta rupiah per bulan (65 US$). kita dapat server yang mampu menangani beban kerja hingga tingkat maksimum  yaitu 700 peak concurrency, dengan tingkat failure yang tetap 0% dalam semua skenario pengujian. Dengan kondisi ini, aplikasi atau server dapat dianggap telah lulus pengujian load dengan baik.
