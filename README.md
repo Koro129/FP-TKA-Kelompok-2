@@ -334,3 +334,71 @@ echo "Aplikasi dijalankan ulang."
 
 
 
+
+
+# Load Testing using Locust
+
+
+
+## Testing Parameters
+- **Endpoint 1:** Get Order
+- **Endpoint 2:** Create new Order
+- **Testing Duration:** 60 seconds
+- **Host:** http://174.138.27.25 (load balancer)
+
+Locust should be run on a different computer/host from the application.
+
+## Running Locust on Windows
+- Execute the following command: `locust`
+![image](https://github.com/Koro129/FP-TKA-Kelompok-2/assets/56831859/a49834cb-7261-4c25-a9f0-15bda3d80380)
+  
+- Set the host to: `http://174.138.27.25` (load balancer)
+
+## Results
+
+### I. Maximum Request per Second (RPS)
+- **Test Configuration:** Max RPS
+- **Maximum RPS:** 214
+- **Failure Rate:** 0%
+  
+![Screenshot 2023-12-14 210348](https://github.com/Koro129/FP-TKA-Kelompok-2/assets/56831859/78fc88b5-a88d-4ae6-9f1c-b25d6a378c1d)
+
+  
+
+### II. Maximum Peak Concurrency with Spawn Rate 25
+- **Spawn Rate:** 25
+- **Testing Duration:** 60 seconds
+- **Maximum Peak Concurrency (Users):** 650
+- **Failure Rate:** 0%
+
+![image](https://github.com/Koro129/FP-TKA-Kelompok-2/assets/56831859/ca1de952-fe0f-463c-b781-f2be5f4a4906)
+
+
+![Screenshot (235)](https://github.com/Koro129/FP-TKA-Kelompok-2/assets/56831859/f9e91def-01ae-4d7b-a455-859ffa9c4772)
+
+  
+
+### III. Maximum Peak Concurrency with Spawn Rate 50
+- **Spawn Rate:** 50
+- **Testing Duration:** 60 seconds
+- **Maximum Peak Concurrency (Users):** 700
+- **Failure Rate:** 0%
+
+![Screenshot (228)](https://github.com/Koro129/FP-TKA-Kelompok-2/assets/56831859/8496fc5a-c521-4132-9537-3bd119a8154a)
+
+
+![Screenshot (229)](https://github.com/Koro129/FP-TKA-Kelompok-2/assets/56831859/1e6a5e66-3cc2-4261-83f2-7196c1264b47)
+
+  
+
+### IV. Maximum Peak Concurrency with Spawn Rate 100
+- **Spawn Rate:** 100
+- **Testing Duration:** 60 seconds
+- **Maximum Peak Concurrency (Users):** 700
+- **Failure Rate:** 0%
+
+![Screenshot (233)](https://github.com/Koro129/FP-TKA-Kelompok-2/assets/56831859/8b325450-65c3-4999-8487-96f5ade01f9d)
+
+![Screenshot (234)](https://github.com/Koro129/FP-TKA-Kelompok-2/assets/56831859/61dc43d7-dade-4430-847d-77784ce402a0)
+
+
