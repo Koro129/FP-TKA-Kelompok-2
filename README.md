@@ -336,7 +336,7 @@ echo "Aplikasi dijalankan ulang."
 
 
 
-# Load Testing using Locust
+# hasil analisis loadtesting
 
 
 
