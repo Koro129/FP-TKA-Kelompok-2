@@ -333,11 +333,7 @@ echo "Aplikasi dijalankan ulang."
 ![image](https://github.com/Koro129/FP-TKA-Kelompok-2/assets/113784446/847616ce-96e9-4259-a700-586378b55020)
 
 
-
-
-
-# hasil analisis loadtesting
-
+# Hasil Analisis Loadtesting
 
 
 ## Testing Parameters
@@ -363,7 +359,6 @@ Locust should be run on a different computer/host from the application.
   
 ![Screenshot 2023-12-14 210348](https://github.com/Koro129/FP-TKA-Kelompok-2/assets/56831859/78fc88b5-a88d-4ae6-9f1c-b25d6a378c1d)
 
-  
 
 ### II. Maximum Peak Concurrency with Spawn Rate 25
 - **Spawn Rate:** 25
@@ -376,7 +371,6 @@ Locust should be run on a different computer/host from the application.
 
 ![Screenshot (235)](https://github.com/Koro129/FP-TKA-Kelompok-2/assets/56831859/f9e91def-01ae-4d7b-a455-859ffa9c4772)
 
-  
 
 ### III. Maximum Peak Concurrency with Spawn Rate 50
 - **Spawn Rate:** 50
@@ -389,7 +383,6 @@ Locust should be run on a different computer/host from the application.
 
 ![Screenshot (229)](https://github.com/Koro129/FP-TKA-Kelompok-2/assets/56831859/1e6a5e66-3cc2-4261-83f2-7196c1264b47)
 
-  
 
 ### IV. Maximum Peak Concurrency with Spawn Rate 100
 - **Spawn Rate:** 100
