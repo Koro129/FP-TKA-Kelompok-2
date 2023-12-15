@@ -333,10 +333,8 @@ echo "Aplikasi dijalankan ulang."
 ![image](https://github.com/Koro129/FP-TKA-Kelompok-2/assets/113784446/847616ce-96e9-4259-a700-586378b55020)
 
 
-# Hasil Analisis Loadtesting
-
-
-## Testing Parameters
+## Hasil Analisis Loadtesting
+### Testing Parameters
 - **Endpoint 1:** Get Order
 - **Endpoint 2:** Create new Order
 - **Testing Duration:** 60 seconds
@@ -344,7 +342,7 @@ echo "Aplikasi dijalankan ulang."
 
 Locust should be run on a different computer/host from the application.
 
-## Running Locust on Windows
+### Running Locust on Windows
 - Execute the following command: `locust`
 ![image](https://github.com/Koro129/FP-TKA-Kelompok-2/assets/56831859/a49834cb-7261-4c25-a9f0-15bda3d80380)
   
@@ -395,6 +393,5 @@ Locust should be run on a different computer/host from the application.
 ![Screenshot (234)](https://github.com/Koro129/FP-TKA-Kelompok-2/assets/56831859/61dc43d7-dade-4430-847d-77784ce402a0)
 
 
-# Kesimpulan
-
+## Kesimpulan
 Dengan hasil-hasil ini, dapat disimpulkan bahwa dengan  1 juta rupiah per bulan (65 US$). kita dapat server yang mampu menangani beban kerja hingga tingkat maksimum  yaitu 700 peak concurrency, dengan tingkat failure yang tetap 0% dalam semua skenario pengujian. Dengan kondisi ini, aplikasi atau server dapat dianggap telah lulus pengujian load dengan baik.
